@@ -5,9 +5,20 @@ function percentage(marks, total) {
   return (marks * 100) / total;
 }
 
+let percentage = function percentage(marks, total) {
+  return (marks * 100) / total;
+}
+
 let percentage = function (marks, total) {
   return (marks * 100) / total;
 }
+
+let percentage = (marks, total) => {
+  return (marks * 100) / total;
+}
+let percentage = (marks, total) => (marks * 100) / total;
+
+
 ```
 
 2. Write Function Declaration or Function Expression next to the function.
@@ -17,9 +28,7 @@ function percentage(marks, total) {
   return (marks * 100) / total;
 }
 
-let percentage = function (marks, total) {
-  return (marks * 100) / total;
-}
+function declaration
 ```
 
 ```js
@@ -27,9 +36,7 @@ let percentage = function percentage(marks, total) {
   return (marks * 100) / total;
 };
 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-};
+function expression
 
 ```
 
@@ -38,9 +45,7 @@ let percentage = function (marks, total) {
   return (marks * 100) / total;
 };
 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-};
+function expression /anonymous function
 ```
 
 ```js
@@ -48,30 +53,22 @@ let percentage = (marks, total) => {
   return (marks * 100) / total;
 };
 
-function percentage (marks, total) =>{
-   return (marks * 100) / total;
-}
+function expression / arrow functionn
 ```
 
 ```js
 let percentage = (marks, total) => (marks * 100) / total;
 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
-
-let percentage = function(marks, total) {
-  return (marks * 100) / total;
-}
+function expression / arrow functionn  n   
 ```
 
 3. Why is a function definition an expression in JavaScript? Give one example of function expression.
 
 In Javascript object can be assigned to a variable and function is an object. So, a function can be assigned to a variable which became a function expression.
 
-4. Why is a function call an expression in JavaScript?
+4. Why is a function called as an expression in JavaScript?
 
-To call all the execution step defined inside a function.
+Because function always return a value like a expression. 
 
 5. Write VALID and INVALID next to each example below with the reason.
 
@@ -82,7 +79,7 @@ function add(a, b) {
 
 let five = add(2, 3); // valid, add with arguments wil call the function
 five = add; // valid the execution step inside add function will be assign to variable five.
-five = five(10, 11); // Answer
+five = five(10, 11); // valid 
 five = function () {
   return 'Hello';
 }; //  valid, it's a function expression
@@ -94,7 +91,7 @@ five = function () {
 
 7. What is the similarities between function definition and function call?
 
-- Both have same name
+- Both is an expression 
 
 8. Is the code below valid or invalid. Explain with reason.
 
@@ -126,3 +123,4 @@ filter([1,2,3,4,5,6],isEven)
 10. Explain what is callback function. Why you can pass a function inside a function?
 
 -When a function passes into another function as an argument which gets invoked inside that function is known as a callback function.
+Because function is an expression in javascript so it can be passed as an argument.
