@@ -9,17 +9,17 @@ var species = 'human';
 
 function change() {
   var species = 'vampire';
-  console.log(species);
+  console.log(species);//vampire
 }
 
-console.log(species); // 1
+console.log(species); // human
 change();
-console.log(species); // 2
+console.log(species); // human
 ```
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/img1.jpg)
 
 - Create the execution context diagram
 - What will be the value of species on 1 and 2
@@ -35,8 +35,8 @@ function topLevelFn() {
   function nestedFn() {
     var anotherLocalVar = "Local to nestedFn's scope.";
 
-    console.log(localVar); // 1
-    console.log(topLevelVar); // 2
+    console.log(localVar); // This is local to topLevelFn's scope
+    console.log(topLevelVar); // 'This is global scope!'
   }
 
   nestedFn();
@@ -47,7 +47,7 @@ topLevelFn();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/img2.jpg)
 
 - Create the execution context diagram
 - What will be the value of 1 and 2
@@ -64,11 +64,11 @@ function main() {
   function inner() {
     var four = 'Four';
 
-    console.log(one); // 1
-    console.log(two); // 2
-    console.log(three); // 3
+    console.log(one); // one
+    console.log(two); // two
+    console.log(three); // three
   }
-  console.log(four); // 4
+  console.log(four); // error
   inner();
 }
 
@@ -78,7 +78,10 @@ console.log(one, two, three, four); // 5
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/img3.jpg)
 
 - Create the execution context diagram
 - What will be the value of 1, 2, 3, 4 and 5 or error if the code does not work
+1 - "one"
+2 - "two"
+3,4,5 - is'nt found
