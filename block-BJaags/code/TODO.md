@@ -67,3 +67,5 @@ let counter = function () {
   return increment();
 };
 ```
+"./img/img1,2,3.jpeg"
+"./img/img4,5.jpeg"
