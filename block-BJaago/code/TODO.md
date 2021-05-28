@@ -41,7 +41,7 @@ function sayHi() {
 sayHi();
 ```
 
-<!-- Put your image below -->
+<!-- Put your image below  -->
 
 ![](./img/image-name.jpg)
 
