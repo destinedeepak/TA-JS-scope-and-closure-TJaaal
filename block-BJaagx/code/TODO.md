@@ -22,7 +22,7 @@ let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5);
 
 2. Create the execution context diagram of the above code snippet
 
-
+"./img/img.jpeg"
 
 3. Write a higher order function that accepts a number and a operation function (callback function). Call the callback function passing the number as argument and return the returned value.
 
