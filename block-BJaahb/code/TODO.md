@@ -15,7 +15,7 @@ let num = getSum();
 "imgsrc: "./img/img1.jpeg"
 2.
 
-Create the execution context diagram for following code. Also write the output of the code below.
+Create the execution context diagram for following code. Also write the output  of the code below.
 
 ```js
 function getCounter() {
