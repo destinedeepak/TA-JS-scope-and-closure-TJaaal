@@ -8,9 +8,9 @@
 function forEach(arr, cb) {
   arr.reduce((acc,ele,i,arr)=>{
     cb(ele,i,arr)
-    return acc
+    // return acc
   }, [])
-  return undefined
+  // return undefined
 }
 
 forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
