@@ -15,9 +15,9 @@ function outer(str){
 
 ```js
 function delay(cb , time){
-  setTimeout(()=>{
-    return cb()
-  },time)
+  return function(){
+    setTimeout(cb, time)
+   }
 }
 ```
 
@@ -147,28 +147,22 @@ arya.lower(); // 3500
 
 ```js
 function nameFactory(firstName, lastName){
-  let fName = ""
-  let lName = ""
   return {
     "getFullName" : function(){
-      fName = firstName
-      lName = lastName
-      return fName + " "+lName
+      return firstName + " "+lastName
     },
-    "setFirstName": function(firstName){
-      fName = firstName
-      lName = lastName
-      return fName + " "+lName
+    "setFirstName": function(fName){
+       firstName = fName
+      return firstName + " "+lastName
     },
-    "setLastName": function(lastName){
-      fName = firstName
-      lName = lastName
-      return fName + " "+lName
+    "setLastName": function(lName){
+      lastName = lName
+      return firstName + " "+lastName
     },
   }
 }
 
-let arya = nameFactory('Arya', 'Stark');
+let arya = nameFactory('Arya', 'Stark');  
 arya.getFullName(); // "Arya Stark"
 arya.setFirstName('Jon'); // "Jon Stark"
 arya.setLastName('Lannister'); // "Jon Lannister"
@@ -183,7 +177,7 @@ function createTag(ele) {
   let parent = document.createElement(ele);
     return function(str){
       parent.innerHTML = str
-      return 
+      return parent
     } 
 }
 
