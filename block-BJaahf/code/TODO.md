@@ -2,7 +2,7 @@
 
 1. Write a higher-order function `loop` that provides something like a for loop statement. It takes a start value, a test function, an update function, and a body function.
 
-- Use the start value as the initial value for the loop
+- Use the start value as the initial value for the loop 
 - Passing the current value in test function can be used to determine when to stop the loop
 - When test is true/truthy execute the body function with the current value
 - After each iteration update the current value using update function passing the current value
