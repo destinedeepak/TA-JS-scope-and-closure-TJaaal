@@ -26,7 +26,13 @@ const final = name('Smith'); // final should be "Will Smith"
 
 ```js
 function isInBetween(a, b) {
-  // your code goes here
+  return function(num){
+      if(a<b && num>a && num < b){
+        return true
+      }else{
+        return false
+      }
+  }  
 }
 
 const isChild = isInBetween(10, 100);
@@ -82,7 +88,6 @@ return function(){
 const randomClub = getCard('Club');
 randomClub(); // Card is: 6 Club
 randomClub(); // Card is: A Club
-const randomSpade = getCard('Spade');
-randomSpade(); // Card is: 6 Spade
+ 
 randomSpade(); // Card is: A Spade
 ```
