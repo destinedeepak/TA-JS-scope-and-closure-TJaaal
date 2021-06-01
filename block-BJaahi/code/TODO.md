@@ -83,8 +83,8 @@ function sayHello(name) {
   return `Hello ${name}`;
 }
 
-let message = sayHello(username);
-var nextMessage = sayHello('Test');
+let message;
+var nextMessage = undefined ;
 
 // Execution Phase
 
@@ -93,8 +93,8 @@ console.log(username, numbers);
 username = 'Arya';
 number = 21;
 
-message;
-nextMessage = undefined;
+let message = sayHello(username);
+var nextMessage = sayHello('Test');
 ```
 
 3.
@@ -433,6 +433,6 @@ function add(a, b) {
 
 // Execution Phase
 
-sum = test(100);
+ sum = test(100);
 
 ```
