@@ -29,15 +29,12 @@ console.log(
 
 ```js
 function multiMap(arrVals, arrCallbacks) {
-  let obj = {};
-  arrVals.forEach(val => {
-     let arr = []
-    arrCallbacks.forEach(fn => {
-      arr.push(fn(val))
+  return arrVals.reduce((acc, cv)=>{
+    acc[cv] =  arrCallbacks.map(fn => {
+      return fn(cv)
     })
-    obj[val] = arr
-  })
-  return obj;
+    return acc
+  }, {})
 }
 
 // TEST
@@ -165,12 +162,16 @@ The function `schedule` will execute the function at first index after the value
 
 ```js
 function schedule(fnArray, timeArray) {
-  let i=0;
-    fnArray.forEach(fn =>{
+  if(fnArray.length !== timeArray.length){
+    console.log("invalid input"); 
+    return;
+  }else{
+    fnArray.forEach((fn,index) =>{
       setTimeout(()=>{
         fn();
-      },timeArray[i++]*1000)
-    })
+      },timeArray[index]*1000)
+    })     
+  }
 }
 
 function sayHi() {
