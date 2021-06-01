@@ -13,7 +13,7 @@ console.log(
   window.firstName, 
   window.lastName,
   window.knownAs
-);//undefined,undefined, no one
+);//undefined   undefined no one
 ```
 
 2. Guess the output:
@@ -51,6 +51,7 @@ function addOne(num){
 var two = addOne(1);
 console.log(one, two);//1,2
 ```
+![name](./img/img4-5.jpg)
 
 5. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -62,17 +63,19 @@ function addOne(num){
 var two = addOne(1);
 console.log(two);//2
 ```
+![name](./img/img4-5.jpg)
 
 6. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 var one = addOne(0);
 const addOne = (num) => {
-  return num + 1;
+  return num + 1; 
 };
 var two = addOne(1);
 console.log(two); // Uncaught ReferenceError: Cannot access 'addOne' before initialization
 ```
+![name](./img/img6.jpg)
 
 7. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -95,7 +98,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome();//undefined  
 ```
 
 9. What will be the output of the following
@@ -108,7 +111,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome();// true 
 ```
 
 10. What will be the output of the following
@@ -182,7 +185,7 @@ console.log(i); // 20
 for (let i = 0; i < 20; i++) {
   //
 }
-console.log(i); // Error: i s not defined
+console.log(i); // Error: i is s not defined
 ```
 
 17. Guess the output and the reason behind that.
