@@ -1,6 +1,6 @@
 ## Understanding Scope and the difference between var, let and const
 
-Watch this video before doing the exercise: https://www.youtube.com/watch?v=XgSjoHgy3Rk
+Watch this video before doing the exercise:  
 
 1. Guess the output:
 
@@ -10,10 +10,10 @@ const lastName = 'Stark';
 var knownAs = 'no one';
 
 console.log(
-  window.firstName,
+  window.firstName, 
   window.lastName,
   window.knownAs
-);
+);//undefined,undefined, no one
 ```
 
 2. Guess the output:
@@ -27,40 +27,40 @@ function fullName(a, b) {
   return a + b;
 }
 
-console.log(window.fullName(firstName, lastName));
+console.log(window.fullName(firstName, lastName)); // Arya Syark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-fucntion addOne(num){
+function addOne(num){
   return num + 1;
 }
 var one = addOne(0);
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two);//1,2
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 var one = addOne(0);
-fucntion addOne(num){
+function addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two);//1,2
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-console.log(addOne(0));
-fucntion addOne(num){
+console.log(addOne(0));//1
+function addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(two);
+console.log(two);//2
 ```
 
 6. Make a Execution Context Diagram for the following JS and write the output.
@@ -71,13 +71,13 @@ const addOne = (num) => {
   return num + 1;
 };
 var two = addOne(1);
-console.log(two);
+console.log(two); // Uncaught ReferenceError: Cannot access 'addOne' before initialization
 ```
 
 7. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-console.log(addOne(0));
+console.log(addOne(0));// Uncaught ReferenceError: Cannot access 'addOne' before initialization
 const addOne = (num) => {
   return num + 1;
 };
@@ -119,9 +119,9 @@ function isAwesome() {
   if (false) {
     awesome = true;
   }
-  console.log(awesome);
+  console.log(awesome); 
 }
-isAwesome();
+isAwesome(); //undefiend
 ```
 
 11. What will be the output of the following
@@ -135,18 +135,18 @@ function fullName(a, b) {
   return a + b;
 }
 const name = fullName(firstName, lastName);
-console.log(name);
+console.log(name);//AryaStark
 ```
 
 12. Guess the output of the code below with a reason.
 
 ```js
 function sayHello() {
-  let name = 'Arya Stark';
+  let fullName = 'Arya Stark';
 }
 sayHello();
 
-console.log(name);
+console.log(fullName );// Error: fullName is not defined because fullName is defined with let and let is function scoped
 ```
 
 13. Guess the output of the code below with a reason.
@@ -155,7 +155,7 @@ console.log(name);
 if (true) {
   var name = 'Arya Stark';
 }
-console.log(name);
+console.log(name); //Arya Stark
 ```
 
 14. Guess the output of the code below with a reason.
@@ -164,7 +164,7 @@ console.log(name);
 if (true) {
   let name = 'Arya Stark';
 }
-console.log(name);
+console.log(name); Error: fullName is not defined because name is defined with let and let is function scoped
 ```
 
 15. Guess the output of the code below with a reason.
@@ -173,7 +173,7 @@ console.log(name);
 for (var i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); // 20
 ```
 
 16. Guess the output of the code below with a reason.
@@ -182,7 +182,7 @@ console.log(i);
 for (let i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); // Error: i s not defined
 ```
 
 17. Guess the output and the reason behind that.
@@ -194,7 +194,7 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample(); //John Snow
 ```
 
 18. Guess the output and the reason behind that.
@@ -206,7 +206,7 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample();// Error: username is not defined
 ```
 
 19. Guess the output and the reason behind that.
@@ -216,9 +216,9 @@ function sample() {
   var username = 'Arya Stark';
   if (true) {
     var username = 'John Snow';
-    console.log(username);
+    console.log(username); // John Snow
   }
-  console.log(username, 'second');
+  console.log(username, 'second'); // John Snow, second
 }
 sample();
 ```
@@ -230,9 +230,9 @@ function sample() {
   let username = 'Arya Stark';
   if (true) {
     let username = 'John Snow';
-    console.log(username, 'first');
+    console.log(username, 'first'); // John Snow first
   }
-  console.log(username, 'second');
+  console.log(username, 'second'); // Arya stark second
 }
 sample();
 ```
@@ -247,7 +247,7 @@ function sample(...args) {
   }
 }
 
-sample('First', 'Second', 'Third');
+sample('First', 'Second', 'Third');// Hello I am First Hello I am Second Hello I am Third
 ```
 
 22. Guess the output and the reason behind that.
@@ -260,7 +260,7 @@ function sample(...args) {
   }
 }
 
-sample('First', 'Second', 'Third');
+sample('First', 'Second', 'Third');// Hello I am First Hello I am Second Hello I am Third
 ```
 
 23. Guess the output and the reason behind that.
@@ -270,8 +270,8 @@ if (true) {
   const myFunc = function () {
     console.log(username, 'Second');
   };
-  console.log(username, 'First');
-  let username = 'Hello World!';
+  console.log(username, 'First'); // not initialized yet
+  let username = 'Hello World!'; // if we ignore first function, then output - Hello World! Second
   myFunc();
 }
 ```
@@ -289,7 +289,7 @@ function outer() {
   inner();
 }
 
-outer();
+outer(); // I love this movie called MAD MAX: FURY ROAD
 ```
 
 25. Guess the output and the reason behind that.
@@ -306,7 +306,7 @@ function outer() {
   inner();
 }
 
-outer();
+outer(); // I love this movie called BEFORE SUNRISE
 ```
 
 26. Guess the output and the reason behind that.
@@ -326,12 +326,13 @@ function outer() {
   }
   inner();
 }
-outer();
+outer(); //I love this movie called GONE GIRL
 ```
 
 30. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
 
 ```js
+
 const addOne = (num) => {
   return num + 1;
 };
@@ -353,6 +354,11 @@ let allFunctions = [
   multiplyThree,
   half,
 ];
+
+allFunctions.reduce((acc, ele)=>{
+  acc = ele(acc)
+  return acc;
+}, 100)
 
 // Answer is: 447
 ```
