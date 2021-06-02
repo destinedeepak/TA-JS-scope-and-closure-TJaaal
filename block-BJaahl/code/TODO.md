@@ -25,12 +25,12 @@ log(); // return undefinde (can't be called twice)
 2. Change the above function in such a way that the function accepts two parameter a callback function and parameter for the callback function. When calling the function pass the parameters.
 
 ```js
-function once(cb, params) {
+function once(cb, param) {
   count = 0;
   return function(){
     if(count === 0){
       count ++
-      return cb(params);
+      return cb(param);
     }else{
       return undefined
     }
@@ -72,9 +72,13 @@ log(); // return undefinde (can't be called twice)
 
 ```js
 function nTimes(cb, times, ...rest) {
+  let count = 0;
   return function(){
-    for(let i = 0; i < times; i++){
+    if(count < times ){
+      count++ 
       return cb(...rest)
+    }else{
+      return  alert("You can not call the function more than three times")
     }
   }
 }
@@ -82,7 +86,7 @@ function nTimes(cb, times, ...rest) {
 // TEST
 let log = (msg) => console.log(msg);
 let logThreeTimes = nTimes(log, 3, 'Hello Arya');
-logThreeTimes(); // log message "Hello Arya" (1)
+`` // log message "Hello Arya" (1)
 logThreeTimes(); // log message "Hello Arya" (2)
 logThreeTimes(); // log message "Hello Arya" (3)
 log(); // return undefinde (can't be called)
